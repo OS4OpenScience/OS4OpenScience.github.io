@@ -1,0 +1,33 @@
+{
+  "name": "OS4OpenScience",
+  "version": "1.0.0",
+  "description": "OS4OpenScience projects list",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard",
+    "start": "budo index.js:bundle.js -p 3000 --no-debug -- -b bundle-collapser/plugin -g unassertify -g yo-yoify -g uglifyify",
+    "build": "node build.js"
+  },
+  "keywords": [
+    "open",
+    "science"
+  ],
+  "author": "Bruno Vieira <mail@bmpvieira.com>",
+  "homepage": "https://OS4OpenScience.github.io",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.4.0",
+    "browser-request": "^0.3.3",
+    "budo": "^9.4.7",
+    "bundle-collapser": "^1.2.1",
+    "choo": "^5.1.4",
+    "nodent": "^3.0.17",
+    "uglifyify": "^3.0.4",
+    "unassertify": "^2.0.4",
+    "yo-yoify": "^3.7.0"
+  },
+  "devDependencies": {
+    "es2020": "^1.1.9",
+    "standard": "^10.0.2"
+  }
+}
