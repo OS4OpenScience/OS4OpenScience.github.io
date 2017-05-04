@@ -11,7 +11,12 @@ app.use(initialState)
 app.use(logger)
 app.use(queryGitHub)
 app.route('/', mainView)
-app.mount('body')
+app.route('/another', another)
+app.mount('#content')
+
+function another (state, emit) {
+  return html`<div>hello world</div>`
+}
 
 var GH_TOKEN = ""
 
@@ -53,18 +58,18 @@ function queryGitHub (state, emitter) {
 
 function mainView (state, emit) {
   return html`
-    <body>
+    <div>
       <button onclick=${onclick}>Sign in</button>
       <div class="container">
         <div class="row">
           <div class="col s12">
             <h1>OS4OpenScience</h1>
             <div class="divider"></div>
-            ${state.items.map(repos)}
+            <a href="/another">another</a>
           </div>
         </div>
       </div>
-    </body>
+    </div>
   `
 }
 
